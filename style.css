@@ -18,13 +18,13 @@ main {
 }
 
 .card {
-  max-width: 32rem;
+  max-width: 36rem;
   margin: 0 auto;
   border: 1px solid #ccc;
   padding: 1rem;
   border-radius: 8px;
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   gap: 2rem;
 }
 
@@ -40,5 +40,45 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
+
+  & > div {
+    & > h1 {
+      font-size: 1.5rem;
+      font-size: clamp(1.5rem, 1.3rem + 1vw, 2.5rem);
+    }
+    & > p {
+      font-size: 1rem;
+      font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+    }
+  }
+}
+
+.github-link {
+  text-decoration: none;
+  color: black;
+  border: 1px solid #4a4949;
+  padding: 4px 1rem;
+  width: fit-content;
+  border-radius: 4px;
+  font: inherit;
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    margin: 0 2rem;
+    max-width: unset;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .profile-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
 }
